@@ -36,5 +36,13 @@ class Piece:
     def make_king(self):
         self.king = True
 
-    def __repr__(self):
-        return str(self.color) + ' piece at ' + str(self.row) + ', ' + str(self.col)
+    def value(self):
+        if self.color == 'white':
+            if self.king:
+                return -2
+            return -1
+        elif self.color == 'black':
+            if self.king:
+                return 2
+            return 1
+        
